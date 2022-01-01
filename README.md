@@ -6,8 +6,7 @@
 
 A dockerized version of Ansible Molecule with docker as the provision driver.
 
-This image is automatically compiled everytime there is a new release of [ansible](https://pypi.org/project/ansible/),  [molecule](https://pypi.org/project/molecule/) and[molecule-docker](https://pypi.org/project/molecule/). To check which versions are in use by the container image, please checkout the [requirements.txt](requirements.txt).
-
+This image is automatically compiled everytime there is a new release of [ansible](https://pypi.org/project/ansible/),  [molecule](https://pypi.org/project/molecule/) or [molecule-docker](https://pypi.org/project/molecule/). To check which version the container is using, see the [requirements.txt](requirements.txt).
 Currently, this image supports `amd64` and `aarch64`.
 
 ## How to use it
