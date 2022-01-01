@@ -13,6 +13,7 @@ RUN apk update &&\
         py3-cryptography\
         musl\
         py3-pynacl\
+        py3-bcrypt\
         openssl &&\ 
     apk add --update --no-cache -t build-dep \
         python3-dev\
