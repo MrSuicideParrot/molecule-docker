@@ -36,12 +36,28 @@ steps:
   - name: docker-socket
     path: /var/run/docker.sock
   commands:
-  - molecule test
+  - molecule test`
 
 volumes:
 - name: docker-socket
   host:
     path: /var/run/docker.sock
+```
+
+### Gitlab
+You can use this image on Gitlab by creating the following `.gitlab-ci.yml`.
+
+```yaml
+---
+image: ghcr.io/mrsuicideparrot/molecule-docker:latest
+
+services:
+  - docker:dind
+
+molecule:
+  stage: test
+  script:
+    - cd roles/testrole && molecule test
 ```
 
 
