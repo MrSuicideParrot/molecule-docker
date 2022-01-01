@@ -29,4 +29,6 @@ RUN apk update &&\
     rm -rf /tmp/* &&\
     rm -rf /root/.cache
 
+WORKDIR /ansible
+
 ENTRYPOINT [ "molecule" ]
