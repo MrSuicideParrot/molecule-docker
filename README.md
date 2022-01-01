@@ -1,5 +1,46 @@
 # molecule-docker
-[![container](https://github.com/MrSuicideParrot/molecule-docker/actions/workflows/docker.yml/badge.svg)](https://github.com/MrSuicideParrot/molecule-docker/actions/workflows/docker.yml)[![renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com)
+![GitHub last commit](https://img.shields.io/github/last-commit/mrsuicideparrot/molecule-docker?style=for-the-badge)![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mrsuicideparrot/molecule-docker/build-container?style=for-the-badge)![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mrsuicideparrot/molecule-docker/test-container?style=for-the-badge)[![renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg?style=for-the-badge)](https://renovatebot.com)
 
-A dockerized version of Ansible Molecule with docker as the provision driver
+A dockerized version of Ansible Molecule with docker as the provision driver.
+
+This image is automatically compiled everytime there is a new release of [ansible](https://pypi.org/project/ansible/),  [molecule](https://pypi.org/project/molecule/) and[molecule-docker](https://pypi.org/project/molecule/). To check which versions are in use by the container image, please checkout the [requirements.txt](requirements.txt).
+
+Currently, this image supports `amd64` and `aarch64`.
+
+## How to use it
+
+### Standalone
+
+You can use this image to test roles with molecule on your computer using docker.
+
+```
+docker run --rm --privileged -v /var/run/docker.sock:/var/run/docker.sock -v $PWD:/ansible ghcr.io/mrsuicideparrot/molecule-docker:latest --help
+```
+
+### Drone.io
+
+An example of a pipeline using this image to perform a molecule test on an ansible role.
+
+```yaml
+kind: pipeline
+name: default
+
+steps:
+- name: molecule
+  image: ghcr.io/mrsuicideparrot/molecule-docker:latest
+  pull: true
+  privileged: true
+  volumes:
+  - name: docker-socket
+    path: /var/run/docker.sock
+  commands:
+  - molecule test
+
+volumes:
+- name: docker-socket
+  host:
+    path: /var/run/docker.sock
+```
+
+
 
