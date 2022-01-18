@@ -7,5 +7,6 @@
     "enabled": true,
     "automerge": true
   },
-  "enabledManagers": ["pip_requirements"]
+  "enabledManagers": ["pip_requirements"],
+  "platformAutomerge": true
 }
