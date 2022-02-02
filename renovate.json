@@ -1,12 +1,17 @@
 {
-  "extends": [
-    "config:base",
-    ":disableDependencyDashboard"
-  ],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true
-  },
-  "enabledManagers": ["pip_requirements"],
-  "platformAutomerge": true
+    "extends": [
+        "config:base",
+        ":disableDependencyDashboard"
+    ],
+    "lockFileMaintenance": {
+        "enabled": true,
+        "automerge": true
+    },
+    "enabledManagers": ["pip_requirements"],
+    "packageRules": [{
+        "matchUpdateTypes": ["major", "minor", "patch"],
+        "automerge": true,
+        "automergeType": "branch"
+    }],
+    "platformAutomerge": true
 }
