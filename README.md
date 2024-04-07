@@ -1,7 +1,7 @@
 # molecule-docker
 ![GitHub last commit](https://img.shields.io/github/last-commit/mrsuicideparrot/molecule-docker?style=for-the-badge)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mrsuicideparrot/molecule-docker/test-container?label=test%20container&style=for-the-badge)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mrsuicideparrot/molecule-docker/build-container?label=build%20container&style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mrsuicideparrot/molecule-docker/docker_pull.yml)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mrsuicideparrot/molecule-docker/docker.yml?branch=main)
 [![renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg?style=for-the-badge)](https://renovatebot.com)
 
 A dockerized version of Ansible Molecule with docker as the provision driver.

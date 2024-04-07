@@ -25,8 +25,7 @@ RUN apk update &&\
         linux-headers\
         libffi-dev\
         openssl-dev &&\
-    pip install -U pip --no-cache-dir &&\
-    pip install --no-cache-dir -r /requirements.txt &&\
+    pip install --break-system-packages --no-cache-dir -r /requirements.txt &&\
     apk del build-dep &&\
     rm -rf /var/cache/apk/* &&\
     rm -rf /tmp/* &&\
